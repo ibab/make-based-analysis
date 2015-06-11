@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import sys
-from root_pandas import *
+import pandas as pd
 
 INPATH=sys.argv[1]
 PLOTPATH=sys.argv[2]
 VARIABLE=sys.argv[3]
 
-df = read_root(INPATH, columns=[VARIABLE])
+df = pd.read_csv(INPATH)
 
 import matplotlib.pyplot as plt
 

@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import sys
-from root_pandas import *
+import pandas as pd
 
-df = read_root(sys.argv[1], where=sys.argv[3])
-df.to_root(sys.argv[2])
+df = pd.read_csv(sys.argv[1])
+df = df.query(sys.argv[3])
+df.to_csv(sys.argv[2])
 
