@@ -11,7 +11,8 @@ build/%.step1.csv: build/%.csv step1.py
 	python step1.py $< $@
 ```
 
-In this case, the task is executed by a python script called `step1.py`. (In general, this could be anything that can be run from the shell)
+In this case, the task is executed by a python script called `step1.py`.
+In general, this could be anything that can be run from the shell.
 The command line arguments that are passed to the script specify the input and output filenames.
 
 After defining a few of these steps, we require `make` to run a certain sequence of steps by specifying the filename of the output we want:
