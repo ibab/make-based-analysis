@@ -24,3 +24,13 @@ This would execute the tasks called `step1`, `step2`, and `plot_everything`.
 
 See `Makefile` for a working example.
 
+## Caveats
+
+Although the workflow is usable, there are a few annoying problems:
+
+- The script used for a task is not automatically checked by `make` for up-to-dateness, which means we have to specify it as a dependency for the target.
+  This becomes annoying once we want to use several input files, because we then can't just pass the `make` variable with all dependencies to our script.
+- `make` doesn't detect changes in the build commands themselves.
+  This means `make` doesn't detect changes in arguments passed to the task.
+  But this is a must if you want your tasks to be reusable.
+
